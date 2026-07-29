@@ -9,7 +9,9 @@ public final class HudOverlayRegistry {
     private final Map<Identifier, HudOverlay> overlays = new LinkedHashMap<>();
 
     void register(HudOverlay overlay) {
-        overlays.put(overlay.id(), overlay);
+        if (overlays.putIfAbsent(overlay.id(), overlay) != null) {
+            throw new IllegalArgumentException("Overlay already registered: " + overlay.id());
+        }
     }
 
     public Collection<HudOverlay> overlays() {
