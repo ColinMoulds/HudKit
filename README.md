@@ -1,40 +1,61 @@
 # HudKit
 
-A client-side UI framework for NeoForge. HudKit gives mods a shared way to
-register HUD overlay elements — health bars, status effect displays, target
-frames, whatever — instead of everyone rolling their own GuiLayer boilerplate
-and settings screen.
+HudKit is a client-side UI framework for NeoForge that gives mods a shared foundation for HUD overlays, settings, and in-game interface elements. Instead of every mod rolling its own overlay boilerplate, HudKit provides a reusable API and configuration layer that can be adopted across projects.
 
-This repo is split into two modules:
+> Build cleaner, more consistent in-game interfaces with a shared HUD foundation.
 
-- **hudkit-api** — the base mod. Handles overlay registration, the shared
-  config/settings framework, and the pause menu integration. No opinionated
-  UI of its own.
-- **hudkit-vitals** — the reference addon. A health bar and status effect
-  overlay, built entirely through HudKit's own API.
+## Table of Contents
+
+- [Overview](#overview)
+- [Modules](#modules)
+- [Requirements](#requirements)
+- [Building](#building)
+- [Status](#status)
+- [Contributing](#contributing)
+- [License](#license)
+
+## Overview
+
+The project is split into two modules:
+
+- **hudkit-api** — the shared foundation for overlay registration, configuration, and pause-menu integration.
+- **hudkit-vitals** — a reference addon that demonstrates a health bar and status-effect overlay built entirely on top of HudKit.
+
+## Modules
+
+- **hudkit-api** — base API, shared settings framework, overlay lifecycle hooks, and integration points.
+- **hudkit-vitals** — example implementation for a compact, gameplay-facing HUD experience.
 
 ## Requirements
 
-- Minecraft 26.1.2
-- NeoForge (see `gradle.properties` for the exact version)
+| Component | Version |
+|---|---|
+| Minecraft | 26.1.2 |
+| NeoForge | 26.1.2.87 or compatible tested build |
+| Java | 21+ for development builds |
 
 ## Building
 
-```
+From the repository root, run:
+
+```bash
 ./gradlew build
 ```
 
-## Running in dev
+For local development and testing:
 
-```
+```bash
 ./gradlew runClient
 ```
 
 ## Status
 
-Early WIP. API surface is not stable yet — expect breaking changes between
-versions until a 1.0 release.
+HudKit is still in early development. The API is not yet considered stable, and breaking changes may occur until the project reaches a more mature release.
+
+## Contributing
+
+Contributions are welcome. If you are working on the framework or reference overlays, keep changes focused and document any API shifts clearly.
 
 ## License
 
-MIT, see `LICENSE`.
+HudKit is licensed under the [MIT License](LICENSE).
