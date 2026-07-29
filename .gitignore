@@ -1,0 +1,35 @@
+# local-only, not part of the repo
+CLAUDE.md
+
+# gradle
+.gradle/
+build/
+out/
+!gradle/wrapper/gradle-wrapper.jar
+
+# idea
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# eclipse
+.project
+.classpath
+.settings/
+bin/
+
+# vscode
+.vscode/
+
+# neoforge / minecraft run dirs
+run/
+runs/
+logs/
+
+# os
+.DS_Store
+Thumbs.db
+
+# misc
+*.log
